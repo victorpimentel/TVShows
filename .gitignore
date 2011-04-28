@@ -5,10 +5,18 @@ build/
 *.perspectivev3
 *.mode1v3
 *.mode2v3
+*.xcuserdatad
 
 # OSX Noise
 .DS_Store
 
+# SVN Noises (just in case)
+.svn
+
+# Web Translate It
+config/
+
 # Frequently Changed Files
 TODO
 NEWS
+
