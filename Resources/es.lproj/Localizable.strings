@@ -50,6 +50,8 @@
 
 "Automatically open each file after download" = "Abrir automáticamente los archivos al terminar la descarga";
 
+"Save each show in its own folder" = "Guardar cada serie en su propia carpeta";
+
 "Are you sure you want to uninstall TVShows? This will also remove all preferences and subscriptions." = "¿Seguro que quieres desinstalar TVShows? Se borrarán todas tus preferencias y suscripciones.";
 
 /* This string is on a button. */

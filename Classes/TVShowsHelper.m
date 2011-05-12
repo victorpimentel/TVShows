@@ -41,7 +41,7 @@
         TVShowsHelperIcon = [[NSData alloc] initWithContentsOfFile:
                              [appPath stringByAppendingPathComponent:@"TVShows-On-Large.icns"]];
     }
-    
+
     return self;
 }
 
@@ -167,7 +167,7 @@
         // No error occurred so check for new episodes
         LogInfo(@"Checking for new episodes.");
         for (NSArray *show in results) {
-            
+             
             // Don't download unless it's been at least 15minutes (or close to it)
             //              NSNumber *lastDownloaded = [NSNumber numberWithDouble:[[show valueForKey:@"lastDownloaded"] timeIntervalSinceNow]];
             //              NSNumber *timeLimit = [NSNumber numberWithInt:-15*60+10];
@@ -198,6 +198,7 @@
 - (void) checkForNewEpisodes:(NSArray *)show
 {
     NSDate *pubDate, *lastDownloaded, *lastChecked;
+	BOOL sortInFolders = [TSUserDefaults getBoolFromKey:@"storeInFolders" withDefault:YES];
     NSArray *episodes = [TSParseXMLFeeds parseEpisodesFromFeed:[show valueForKey:@"url"] maxItems:10];
     
     if ([episodes count] == 0) {
@@ -209,7 +210,7 @@
     // Get the dates before checking anything, in case we have to download more than one episode
     lastDownloaded = [show valueForKey:@"lastDownloaded"];
     lastChecked = [TSUserDefaults getDateFromKey:@"lastCheckedForEpisodes"];
-    
+    	
     // For each episode that was parsed...
     for (NSArray *episode in episodes) {
         pubDate = [episode valueForKey:@"pubDate"];
@@ -227,6 +228,18 @@
                 chooseAnyVersion = NO;
             }
             
+			// Let's build the file path. If the user wants to sort episodes in folders, the folder's name
+			// will be added here.
+			
+			NSMutableString* fileName = [NSMutableString string];
+			if (sortInFolders) {
+				[[NSFileManager defaultManager]
+				 createDirectoryAtPath:[[TSUserDefaults getStringFromKey:@"downloadFolder"] stringByAppendingFormat:@"/%@", [show valueForKey:@"name"]]
+				 withIntermediateDirectories:NO attributes:nil error:nil];
+				[fileName appendFormat:@"%@/", [show valueForKey:@"name"]];
+			}
+			[fileName appendFormat:@"%@.torrent", [episode valueForKey:@"episodeName"]];
+			
             // First let's try to download the HD version from the RSS
             // Only if it is HD and HD is enabled (or SD was not available last three days)
             if (([[show valueForKey:@"quality"] boolValue] &&
@@ -234,7 +247,7 @@
                 chooseAnyVersion) {
                 
                 if ([self startDownloadingURL:[episode valueForKey:@"link"]
-                                 withFileName:[[episode valueForKey:@"episodeName"] stringByAppendingString:@".torrent"]
+                                 withFileName:fileName
                                      showInfo:show]) {
                     
                     // Update when the show was last downloaded.
@@ -251,7 +264,7 @@
                 chooseAnyVersion) {
                 
                 if ([self startDownloadingURL:[episode valueForKey:@"link"]
-                                 withFileName:[[episode valueForKey:@"episodeName"] stringByAppendingString:@".torrent"]
+                                 withFileName:fileName
                                      showInfo:show]) {
                     
                     // Update when the show was last downloaded.
@@ -259,6 +272,7 @@
                     
                 }
             }
+			
         } else {
             // The rest is not important because it is even before the previous entry
             return;
@@ -400,7 +414,7 @@
 - (IBAction) quitHelper:(id)sender
 {
     [[[PreferencesController new] autorelease] enabledControlDidChange:NO];
-    [NSApp terminate];
+	[NSApp terminate];
 }
 
 #pragma mark -

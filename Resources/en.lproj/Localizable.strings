@@ -50,6 +50,8 @@
 
 "Automatically open each file after download" = "Automatically open each file after download";
 
+"Save each show in its own folder" = "Save each show in its own folder";
+
 "Are you sure you want to uninstall TVShows? This will also remove all preferences and subscriptions." = "Are you sure you want to uninstall TVShows? This will also remove all preferences and subscriptions.";
 
 /* This string is on a button. */

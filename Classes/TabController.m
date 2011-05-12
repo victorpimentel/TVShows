@@ -408,6 +408,10 @@
     NSInteger clickedCol = [episodeTableView clickedColumn];
     NSInteger clickedRow = [episodeTableView clickedRow];
     
+	// Should the episode be downloaded in its own folder?
+	
+	BOOL sortInFolders = [TSUserDefaults getBoolFromKey:@"sortInFolders" withDefault:YES];
+	
     if (clickedRow >= 0 && clickedCol >= 0) {
         // Grab information about the clicked cell.
         NSCell *cell = [episodeTableView preparedCellAtColumn:clickedCol row:clickedRow];
@@ -420,8 +424,18 @@
             // This currently only returns a Torrent file and should eventually regex
             // out the actual file extension of the item we're downloading.
             NSObject *episode = [self getEpisodeAtRow:clickedRow];
+			
+			NSMutableString* fileName = [NSMutableString string];
+			if (sortInFolders) {
+				[[NSFileManager defaultManager]
+				 createDirectoryAtPath:[[TSUserDefaults getStringFromKey:@"downloadFolder"] stringByAppendingFormat:@"/%@", [selectedShow valueForKey:@"name"]]
+				 withIntermediateDirectories:NO attributes:nil error:nil];
+				[fileName appendFormat:@"%@/", [selectedShow valueForKey:@"name"]];
+			}
+			[fileName appendFormat:@"%@.torrent", [episode valueForKey:@"episodeName"]];
+
             [self startDownloadingURL:[episode valueForKey:@"link"]
-                         withFileName:[[episode valueForKey:@"episodeName"] stringByAppendingString:@".torrent"] ];
+                         withFileName:fileName];
         }
     }
     
