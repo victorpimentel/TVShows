@@ -38,6 +38,7 @@
     IBOutlet NSButton *showMenuBarIcon;
     IBOutlet NSButton *autoOpenDownloadedFiles;
     IBOutlet NSButton *autoSelectHDVersion;
+	IBOutlet NSButton *sortInFolders;
     
     // Growl Settings
     IBOutlet NSTextField *growlNotifyText;
@@ -69,6 +70,7 @@
 - (void) openPanelDidEnd:(NSOpenPanel *)openPanel returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 - (IBAction) autoOpenDownloadedFilesDidChange:(id)sender;
 - (IBAction) showMenuBarIconDidChange:(id)sender;
+- (IBAction) sortInFoldersDidChange:(id)sender;
 
 #pragma mark -
 #pragma mark Growl Notification Preferences

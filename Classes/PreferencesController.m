@@ -58,6 +58,7 @@
     [TSUserDefaults setKey:@"AutoSelectHDVersion"       fromBool:YES];
     [TSUserDefaults setKey:@"checkDelay"                fromFloat:0];
     [TSUserDefaults setKey:@"downloadFolder"            fromString:[NSHomeDirectory() stringByAppendingPathComponent:@"Downloads"]];
+	[TSUserDefaults setKey:@"sortInFolders"				fromBool:YES];
     [TSUserDefaults setKey:@"GrowlOnAppUpdate"          fromBool:YES];
     [TSUserDefaults setKey:@"GrowlOnNewEpisode"         fromBool:YES];
     [TSUserDefaults setKey:@"hasLaunched"               fromBool:YES];
@@ -110,6 +111,10 @@
     // Default save location
     [downloadLocationText setStringValue:TSLocalizeString(@"Episode save location:")];
     [self buildDownloadLocationMenu];
+	
+	// Save each show in its own folder
+	[sortInFolders setStringValue:TSLocalizeString(@"Save each show in its own folder")];
+	[sortInFolders setState:[TSUserDefaults getBoolFromKey:@"sortInFolders" withDefault:YES]];
     
     // Notify when a new episode is downloaded
     [growlNotifyText setStringValue:TSLocalizeString(@"Send Growl notifications when…")];
@@ -244,6 +249,11 @@
 - (IBAction) autoSelectHDVersionDidChange:(id)sender
 {
     [TSUserDefaults setKey:@"AutoSelectHDVersion" fromBool:[autoSelectHDVersion state]];
+}
+
+- (IBAction) sortInFoldersDidChange:(id)sender
+{
+	[TSUserDefaults setKey:@"sortInFolders" fromInt:[sortInFolders state]];
 }
 
 - (IBAction) showMenuBarIconDidChange:(id)sender
