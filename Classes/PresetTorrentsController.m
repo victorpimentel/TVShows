@@ -153,7 +153,7 @@
     }
     
     // Focus the search field
-    [[PTSearchField cell] performClick:self];
+    [PTSearchField becomeFirstResponder];
     
     [NSApp endSheet: PTWindow];
     
@@ -214,8 +214,7 @@
     [PTTableView scrollRowToVisible:0];
     
     // Focus the search field
-    [[PTSearchField cell] performClick:self];
-    
+    [PTSearchField becomeFirstResponder];    
 }
 
 - (IBAction)visitInstructionsButton:(id)sender {
