@@ -20,7 +20,7 @@
 		342FEC8511E1864000E21FC0 /* hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 342FEC8411E1864000E21FC0 /* hd.png */; };
 		3444F2CC11DD186500BF3724 /* Relaunch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3444F2CB11DD186500BF3724 /* Relaunch.m */; };
 		3444F2CD11DD189600BF3724 /* relaunch in Resources */ = {isa = PBXBuildFile; fileRef = 3444F2C311DD182000BF3724 /* relaunch */; };
-		34463CCD1331AD34001453EB /* PTViewSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34463CCC1331AD34001453EB /* PTViewSubclass.m */; };
+		34463CCD1331AD34001453EB /* GradientViewSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34463CCC1331AD34001453EB /* GradientViewSubclass.m */; };
 		34463CD01331B424001453EB /* NSColor+BWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34463CCF1331B424001453EB /* NSColor+BWAdditions.m */; };
 		34463CD51331B90D001453EB /* InfoViewSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34463CD41331B90D001453EB /* InfoViewSubclass.m */; };
 		34463CD81331BC40001453EB /* CRViewSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34463CD71331BC40001453EB /* CRViewSubclass.m */; };
@@ -196,6 +196,7 @@
 		57FDFEBB13A94E310019EDB6 /* TheTVDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B35D51210DB6000F4BFF0 /* TheTVDB.m */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
+		F1BB481C1532836C00CDE2A8 /* PTViewSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = F1BB481B1532836C00CDE2A8 /* PTViewSubclass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,8 +277,8 @@
 		342FEC8411E1864000E21FC0 /* hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hd.png; sourceTree = "<group>"; };
 		3444F2C311DD182000BF3724 /* relaunch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = relaunch; sourceTree = BUILT_PRODUCTS_DIR; };
 		3444F2CB11DD186500BF3724 /* Relaunch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Relaunch.m; path = ../Relaunch.m; sourceTree = "<group>"; };
-		34463CCB1331AD34001453EB /* PTViewSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTViewSubclass.h; sourceTree = "<group>"; };
-		34463CCC1331AD34001453EB /* PTViewSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTViewSubclass.m; sourceTree = "<group>"; };
+		34463CCB1331AD34001453EB /* GradientViewSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientViewSubclass.h; sourceTree = "<group>"; };
+		34463CCC1331AD34001453EB /* GradientViewSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientViewSubclass.m; sourceTree = "<group>"; };
 		34463CCE1331B424001453EB /* NSColor+BWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+BWAdditions.h"; path = "BWToolkit/NSColor+BWAdditions.h"; sourceTree = "<group>"; };
 		34463CCF1331B424001453EB /* NSColor+BWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+BWAdditions.m"; path = "BWToolkit/NSColor+BWAdditions.m"; sourceTree = "<group>"; };
 		34463CD11331B887001453EB /* InfoViewSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewSubclass.h; sourceTree = "<group>"; };
@@ -479,6 +480,8 @@
 		57F7062913AF32E5002A83E4 /* Cover-DVD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover-DVD.png"; sourceTree = "<group>"; };
 		57F7062C13AF3798002A83E4 /* Cover-Bluray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover-Bluray.png"; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* TVShows.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVShows.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BB481A1532836C00CDE2A8 /* PTViewSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTViewSubclass.h; sourceTree = "<group>"; };
+		F1BB481B1532836C00CDE2A8 /* PTViewSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTViewSubclass.m; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -638,13 +641,15 @@
 			children = (
 				34463CD61331BC3F001453EB /* CRViewSubclass.h */,
 				34463CD71331BC40001453EB /* CRViewSubclass.m */,
+				34463CCB1331AD34001453EB /* GradientViewSubclass.h */,
+				34463CCC1331AD34001453EB /* GradientViewSubclass.m */,
 				34463CD11331B887001453EB /* InfoViewSubclass.h */,
 				34463CD41331B90D001453EB /* InfoViewSubclass.m */,
+				3444F2CB11DD186500BF3724 /* Relaunch.m */,
 				340F15F8118FEBDE00A1BD00 /* SUUpdaterSubclass.h */,
 				340F15F9118FEBDE00A1BD00 /* SUUpdaterSubclass.m */,
-				34463CCB1331AD34001453EB /* PTViewSubclass.h */,
-				34463CCC1331AD34001453EB /* PTViewSubclass.m */,
-				3444F2CB11DD186500BF3724 /* Relaunch.m */,
+				F1BB481A1532836C00CDE2A8 /* PTViewSubclass.h */,
+				F1BB481B1532836C00CDE2A8 /* PTViewSubclass.m */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -1305,7 +1310,7 @@
 				345EC8DA13235DA400F36BFF /* Subscriptions.xcdatamodel in Sources */,
 				345EC8EE13235E4800F36BFF /* ValueTransformers.m in Sources */,
 				342A542A132D4CB800FB526F /* BWInsetTextField.m in Sources */,
-				34463CCD1331AD34001453EB /* PTViewSubclass.m in Sources */,
+				34463CCD1331AD34001453EB /* GradientViewSubclass.m in Sources */,
 				34463CD01331B424001453EB /* NSColor+BWAdditions.m in Sources */,
 				34463CD51331B90D001453EB /* InfoViewSubclass.m in Sources */,
 				34463CD81331BC40001453EB /* CRViewSubclass.m in Sources */,
@@ -1344,6 +1349,7 @@
 				57D19A2113AEF44B00BDE873 /* LRFilterButtonCell.m in Sources */,
 				57D19A2413AEF44B00BDE873 /* LROverflowButton.m in Sources */,
 				5786454E13B1380900C840C3 /* TSTorrentFunctions.m in Sources */,
+				F1BB481C1532836C00CDE2A8 /* PTViewSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

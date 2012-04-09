@@ -15,6 +15,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SubscriptionsDelegate.h"
 #import "PresetShowsDelegate.h"
+#import "PTViewSubclass.h"
 
 @interface PresetTorrentsController : NSWindowController
 {
@@ -26,6 +27,7 @@
     IBOutlet PresetShowsDelegate *presetsDelegate;
     
     IBOutlet NSWindow *PTWindow;
+    IBOutlet PTViewSubclass *PTView;
     IBOutlet NSTableView *PTTableView;
     IBOutlet NSArrayController *PTArrayController;
     IBOutlet NSSearchField *PTSearchField;

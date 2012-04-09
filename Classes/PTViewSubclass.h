@@ -14,22 +14,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface PTViewSubclass : NSView
-{
-    NSColor *startingColor;
-    NSColor *endingColor;
-    int angle;
-    
-    NSColor *topBorderColor;
-    NSColor *bottomBorderColor;
-}
-
-@property (nonatomic, retain) NSColor *startingColor;
-@property (nonatomic, retain) NSColor *endingColor;
-@property (assign) int angle;
-
-@property (nonatomic, retain) NSColor *topBorderColor;
-@property (nonatomic, retain) NSColor *bottomBorderColor;
 
 @end

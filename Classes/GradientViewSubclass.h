@@ -12,24 +12,24 @@
  *
  */
 
-#import "PTViewSubclass.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation PTViewSubclass
 
--(void)keyDown:(NSEvent *)theEvent
+@interface GradientViewSubclass : NSView
 {
-    if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask && 
-         [theEvent.characters isEqualToString:@"f"]) {
-
-        NSView* searchField = [self viewWithTag:1];
-        
-        if (searchField) {
-            [searchField becomeFirstResponder];
-        }
-    }
-    else {
-        [super keyDown:theEvent];
-    }
+    NSColor *startingColor;
+    NSColor *endingColor;
+    int angle;
+    
+    NSColor *topBorderColor;
+    NSColor *bottomBorderColor;
 }
+
+@property (nonatomic, retain) NSColor *startingColor;
+@property (nonatomic, retain) NSColor *endingColor;
+@property (assign) int angle;
+
+@property (nonatomic, retain) NSColor *topBorderColor;
+@property (nonatomic, retain) NSColor *bottomBorderColor;
 
 @end
