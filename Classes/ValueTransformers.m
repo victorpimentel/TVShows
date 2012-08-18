@@ -86,7 +86,7 @@ static NSDate *TSLastDateEmptySubscriptions = nil;
 - (id) transformedValue:(id)value
 {
     if (TSLastDateEmptySubscriptions == nil) {
-        TSLastDateEmptySubscriptions = [NSDate date];
+        TSLastDateEmptySubscriptions = [[NSDate date] retain];
     }
     
     // For some reason, we sometimes receive nil values.
@@ -95,10 +95,12 @@ static NSDate *TSLastDateEmptySubscriptions = nil;
     // to avoid false positives
     if (value == nil || [value count] > 0 ||
         [[NSDate date] timeIntervalSinceDate:TSLastDateEmptySubscriptions] < 0.5) {
-        TSLastDateEmptySubscriptions = [NSDate date];
+        [TSLastDateEmptySubscriptions release];
+        TSLastDateEmptySubscriptions = [[NSDate date] retain];
         return [NSNumber numberWithBool:YES];
     } else {
-        TSLastDateEmptySubscriptions = [NSDate date];
+        [TSLastDateEmptySubscriptions release];
+        TSLastDateEmptySubscriptions = [[NSDate date] retain];
         return [NSNumber numberWithBool:NO];
     }
 }
