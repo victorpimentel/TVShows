@@ -523,19 +523,15 @@
 - (void) awakeFromSleep
 {
     LogInfo(@"Awaked!");
-    if (checkerLoop != nil) {
-        [checkerLoop performSelector:@selector(invalidate) onThread:checkerThread withObject:nil waitUntilDone:YES];
-        checkerLoop = nil;
-        [checkerThread release];
-        checkerThread = nil;
-    }
-    
-    // And start the thread
-    checkerThread = [[NSThread alloc] initWithTarget:self selector:@selector(runLoopAfterAwake) object:nil];
-    [checkerThread start];
+    runCheck;
 }
 
 - (IBAction) checkNow:(id)sender
+{
+    runCheck;
+}
+
+- (void) runCheck
 {
     if (checkerLoop != nil) {
         [checkerLoop performSelector:@selector(invalidate) onThread:checkerThread withObject:nil waitUntilDone:YES];
