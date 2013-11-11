@@ -1,0 +1,1 @@
+If you want to help translating TVShows, please [request to be added to the translation team](https://webtranslateit.com/en/projects/874-TVShows/invitation_request), GitHub pull requests will not be accepted.

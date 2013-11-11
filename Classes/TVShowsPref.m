@@ -162,6 +162,10 @@
         return [self fixUnsupportedLanguage:@"sl-SI" withFallback:@"English" withMessage:@"System Preferences is not translated to Slovenian, so TVShows needs to fix it to be able to show the application in your language.\n\nPlease provide your password in the next window so we can fix it."];
     } else if ([locale isEqualToString:@"tr"]) {
         return [self fixUnsupportedLanguage:@"tr" withFallback:@"English" withMessage:@"System Preferences is not translated to Turkish, so TVShows needs to fix it to be able to show the application in your language.\n\nPlease provide your password in the next window so we can fix it."];
+    } else if ([locale isEqualToString:@"hu"]) {
+        return [self fixUnsupportedLanguage:@"hu" withFallback:@"English" withMessage:@"System Preferences is not translated to Hungarian, so TVShows needs to fix it to be able to show the application in your language.\n\nPlease provide your password in the next window so we can fix it."];
+    } else if ([locale isEqualToString:@"hu"]) {
+        return [self fixUnsupportedLanguage:@"fy" withFallback:@"Dutch" withMessage:@"System Preferences is not translated to Frysian, so TVShows needs to fix it to be able to show the application in your language.\n\nPlease provide your password in the next window so we can fix it."];
     }
     
     return NO;
