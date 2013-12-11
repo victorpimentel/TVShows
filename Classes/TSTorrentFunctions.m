@@ -99,8 +99,7 @@
         if ([url rangeOfString:@"magnet:"].location != NSNotFound) {
             
             // Just open it
-            [[NSWorkspace sharedWorkspace] openURL:
-             [NSURL URLWithString:[url stringByReplacingOccurrencesOfString:@" " withString:@"%20"]]];
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
             
 #if HELPER_APP
             if([TSUserDefaults getBoolFromKey:@"GrowlOnNewEpisode" withDefault:1]) {
