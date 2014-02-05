@@ -29,7 +29,10 @@
 	self = [super init];
 	if (self != nil) {
 		
-		[self setImage:[NSImage imageNamed:@"OverflowButton.tif"]];
+        NSImage* imageToSet = [[[NSImage alloc] initByReferencingFile:
+                                [[NSBundle bundleForClass:[self class]] pathForResource:@"OverflowButton"
+                                                                                 ofType:@"tif"]] autorelease];
+		[self setImage:imageToSet];
 		[self setBordered:NO];
 		[self sizeToFit];
 		
@@ -52,8 +55,10 @@
 - (void)mouseDown:(NSEvent *)theEvent 
 { 
 	[self highlight:NO];
-	[self setImage:[NSImage imageNamed:@"OverflowButtonPressed.tif"]];
-	
+    NSImage* imageToSet = [[[NSImage alloc] initByReferencingFile:
+                            [[NSBundle bundleForClass:[self class]] pathForResource:@"OverflowButtonPressed"
+                                                                             ofType:@"tif"]] autorelease];
+	[self setImage:imageToSet];
 	timer=[NSTimer timerWithTimeInterval:0.0 target:self selector:@selector(displayMenu:) userInfo:theEvent repeats:NO];
 	[[NSRunLoop currentRunLoop] addTimer:timer forMode:@"NSDefaultRunLoopMode"];	
 } 
@@ -61,7 +66,10 @@
 - (void)mouseUp:(NSEvent *)theEvent 
 { 
 	[self highlight:NO];
-	[self setImage:[NSImage imageNamed:@"OverflowButton.tif"]];
+    NSImage* imageToSet = [[[NSImage alloc] initByReferencingFile:
+      [[NSBundle bundleForClass:[self class]] pathForResource:@"OverflowButton"
+                                                       ofType:@"tif"]] autorelease];
+	[self setImage:imageToSet];
 } 
 
 @end
